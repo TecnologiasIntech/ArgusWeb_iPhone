@@ -1,3 +1,1 @@
-# DEMO
-
-https://vital-time.firebaseapp.com
+# Argus Web iPhone
