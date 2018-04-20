@@ -12,6 +12,7 @@ import { esLocale } from 'ngx-bootstrap/locale';
 import {CountdownTimerModule} from 'ngx-countdown-timer';
 import { ToastrModule } from 'ngx-toastr';
 import { GuardsComponent } from './pages/guards/guards.component';
+import { GuardComponent } from './modals/guard/guard.component';
 
 defineLocale('es', esLocale);
 

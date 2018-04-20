@@ -27,6 +27,9 @@ import {CountdownTimerModule} from 'ngx-countdown-timer';
 import {LimitToPipe} from '../pipes/limit-to.pipe';
 import {GrowlComponent} from '../components/growl/growl.component';
 import {GuardsComponent} from '../pages/guards/guards.component';
+import {GuardService} from '../services/guard.service';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {GuardComponent} from '../modals/guard/guard.component';
 
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -42,13 +45,15 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         NavigationTriggerComponent,
         LimitToPipe,
         GrowlComponent,
-        GuardsComponent
+        GuardsComponent,
+        GuardComponent
     ],
     providers: [
         Globals,
         Broadcaster,
         AlertService,
-        ValidationService
+        ValidationService,
+        GuardService
     ],
     imports: [
         CommonModule,
@@ -65,9 +70,11 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         Select2Module,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
+        AngularFireAuthModule,
         CountdownTimerModule,
     ],
     entryComponents: [
+        GuardComponent
     ]
 })
 
