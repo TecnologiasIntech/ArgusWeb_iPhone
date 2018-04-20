@@ -13,6 +13,8 @@ import {CountdownTimerModule} from 'ngx-countdown-timer';
 import { ToastrModule } from 'ngx-toastr';
 import { GuardsComponent } from './pages/guards/guards.component';
 import { GuardComponent } from './modals/guard/guard.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 defineLocale('es', esLocale);
 

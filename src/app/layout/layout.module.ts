@@ -30,6 +30,8 @@ import {GuardsComponent} from '../pages/guards/guards.component';
 import {GuardService} from '../services/guard.service';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {GuardComponent} from '../modals/guard/guard.component';
+import {NotFoundComponent} from '../components/not-found/not-found.component';
+import {LoaderComponent} from '../components/loader/loader.component';
 
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -46,7 +48,9 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         LimitToPipe,
         GrowlComponent,
         GuardsComponent,
-        GuardComponent
+        GuardComponent,
+        NotFoundComponent,
+        LoaderComponent
     ],
     providers: [
         Globals,
