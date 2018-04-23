@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GuardService} from '../../services/guard.service';
-import {Guard} from '../../interface/guard';
+import {Guard} from '../../interfaces/guard';
 import {BsModalService} from 'ngx-bootstrap';
 import {GuardComponent} from '../../modals/guard/guard.component';
 import {Globals} from '../../statics/globals';

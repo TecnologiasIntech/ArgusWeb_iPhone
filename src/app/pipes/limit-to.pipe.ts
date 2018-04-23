@@ -1,18 +1,24 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-  name: 'limitTo'
+    name: 'limitTo'
 })
 export class LimitToPipe implements PipeTransform {
 
-    transform(array: any, limit: any) : any {
-        debugger
+    transform(textComplete: any, limit: any): any {
+        let textLimited: string = '';
 
-        let newArray:any[];
-        for(let i = 0; i <= limit; i ++){
-            newArray.push(array[i]);
+        if (textComplete.length > limit) {
+            for (let i = 0; i < limit; i++) {
+                textLimited += textComplete[i];
+
+            }
+            textLimited += '...';
+        } else {
+            textLimited = textComplete;
         }
-        return newArray
+
+        return textLimited;
     }
 
 }

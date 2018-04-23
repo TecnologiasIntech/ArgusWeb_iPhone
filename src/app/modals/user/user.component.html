@@ -1,0 +1,10 @@
+<section class="m-t-15 p-15">
+
+    <h4 class="text-center">{{ user.usuarioNombre }}</h4>
+
+    <h5 class="m-t-30"><b>Telefono: </b>{{ user.usuarioTelefono }}</h5>
+    <h5 class="m-t-25"><b>Email: </b>{{ user.usuarioEmail | limitTo: 29}}</h5>
+
+    <button class="btn btn-danger btn-block m-t-30 m-b-5" (click)="closeModal()">Cerrar</button>
+
+</section>
