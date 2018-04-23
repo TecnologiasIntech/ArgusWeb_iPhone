@@ -20,6 +20,8 @@ import { UserComponent } from './modals/user/user.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { ZonesComponent } from './pages/zones/zones.component';
 import { ZoneComponent } from './modals/zone/zone.component';
+import { ClientsZoneComponent } from './pages/clients-zone/clients-zone.component';
+import { ClientZoneComponent } from './modals/client-zone/client-zone.component';
 
 defineLocale('es', esLocale);
 

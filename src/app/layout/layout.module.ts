@@ -39,6 +39,9 @@ import {CapitalizePipe} from '../pipes/capitalize.pipe';
 import {ZonesComponent} from '../pages/zones/zones.component';
 import {ZoneComponent} from '../modals/zone/zone.component';
 import {ZoneService} from '../services/zone.service';
+import {ClientZoneComponent} from '../modals/client-zone/client-zone.component';
+import {ClientZoneService} from '../services/client-zone.service';
+import {ClientsZoneComponent} from '../pages/clients-zone/clients-zone.component';
 
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -62,7 +65,9 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         UserComponent,
         CapitalizePipe,
         ZonesComponent,
-        ZoneComponent
+        ZoneComponent,
+        ClientsZoneComponent,
+        ClientZoneComponent
     ],
     providers: [
         Globals,
@@ -71,7 +76,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         ValidationService,
         GuardService,
         UserService,
-        ZoneService
+        ZoneService,
+        ClientZoneService
     ],
     imports: [
         CommonModule,
@@ -95,7 +101,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     entryComponents: [
         GuardComponent,
         UserComponent,
-        ZoneComponent
+        ZoneComponent,
+        ClientZoneComponent
     ]
 })
 
