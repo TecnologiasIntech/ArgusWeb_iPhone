@@ -4,6 +4,7 @@ import {Guard} from '../../interfaces/guard';
 import {BsModalService} from 'ngx-bootstrap';
 import {GuardComponent} from '../../modals/guard/guard.component';
 import {Globals} from '../../statics/globals';
+import * as _ from "lodash";
 
 @Component({
     selector: 'app-guards',
@@ -36,9 +37,9 @@ export class GuardsComponent implements OnInit {
         this.guardFoundSearch = this.guardsSearched.length > 0;
     }
 
-    showGuard(index: number) {
+    showGuard(index: string) {
         let modalRef = this._modalService.show(GuardComponent, Object.assign({}, Globals.optionModalLg, {class: 'gray modal-lg'}));
-        modalRef.content.guard = this.guards[index];
+        modalRef.content.guard = _.filter(this.guards, ['usuarioKey', index])[0];
     }
 
 }

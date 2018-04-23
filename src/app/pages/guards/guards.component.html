@@ -31,7 +31,7 @@
             <table class="table">
 
                 <tbody>
-                <tr *ngFor="let guard of guardsSearched; let index = index" (click)="showGuard(index)">
+                <tr *ngFor="let guard of guardsSearched; let index = index" (click)="showGuard(guard.usuarioKey)">
                     <td class="guards">
                         {{ guard.usuarioNombre }}
                     </td>
