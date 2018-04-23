@@ -18,6 +18,8 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { UsersComponent } from './pages/users/users.component';
 import { UserComponent } from './modals/user/user.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { ZonesComponent } from './pages/zones/zones.component';
+import { ZoneComponent } from './modals/zone/zone.component';
 
 defineLocale('es', esLocale);
 
