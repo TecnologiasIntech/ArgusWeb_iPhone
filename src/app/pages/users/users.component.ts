@@ -91,7 +91,6 @@ export class UsersComponent implements OnInit {
 
     showUser(index: string, userType: number) {
         let modalRef = this._modalService.show(UserComponent, Object.assign({}, Globals.optionModalLg, {class: 'gray modal-lg'}));
-        modalRef.content.user = this.getUsersByUserType(userType)[index];
         modalRef.content.user = _.filter(this.getUsersByUserType(userType), ['usuarioKey', index])[0];
     }
 

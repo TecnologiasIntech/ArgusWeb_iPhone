@@ -4,6 +4,7 @@ import {Globals} from '../../statics/globals';
 import {Zone} from '../../interfaces/zone';
 import {ZoneService} from '../../services/zone.service';
 import {ZoneComponent} from '../../modals/zone/zone.component';
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-zones',
@@ -39,6 +40,7 @@ export class ZonesComponent implements OnInit {
     showZone(index: number) {
         let modalRef = this._modalService.show(ZoneComponent, Object.assign({}, Globals.optionModalLg, {class: 'gray modal-lg'}));
         modalRef.content.zone = this.zones[index];
+        modalRef.content.zone = _.filter(this.zones, ['zonaNombre', index])[0];
     }
 
 }
