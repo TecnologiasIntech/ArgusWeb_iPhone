@@ -6,6 +6,7 @@ import {User} from '../../interfaces/user';
 import {UserComponent} from '../../modals/user/user.component';
 import {UserType} from '../../enums/user-type.enum';
 import {Observable} from 'rxjs/Observable';
+import * as _ from "lodash";
 
 @Component({
     selector: 'app-users',
@@ -88,9 +89,9 @@ export class UsersComponent implements OnInit {
         if (userType == UserType.HUMANRESOURCES) return this.humanResources;
     }
 
-    showUser(index: number, userType: number) {
+    showUser(index: string, userType: number) {
         let modalRef = this._modalService.show(UserComponent, Object.assign({}, Globals.optionModalLg, {class: 'gray modal-lg'}));
-        modalRef.content.user = this.getUsersByUserType(userType)[index];
+        modalRef.content.user = _.filter(this.getUsersByUserType(userType), ['usuarioKey', index])[0];
     }
 
     changeTab(tab: any) {

@@ -31,7 +31,7 @@
             <table class="table">
 
                 <tbody>
-                <tr *ngFor="let zone of zonesSearched; let index = index" (click)="showZone(index)">
+                <tr *ngFor="let zone of zonesSearched; let index = index" (click)="showZone(zone.zonaNombre)">
                     <td class="guards">
                         {{ zone.zonaNombre }}
                     </td>

@@ -3,6 +3,7 @@ import {LayoutComponent} from './layout.component';
 import {GuardsComponent} from '../pages/guards/guards.component';
 import {UsersComponent} from '../pages/users/users.component';
 import {ZonesComponent} from '../pages/zones/zones.component';
+import {ClientsZoneComponent} from '../pages/clients-zone/clients-zone.component';
 
 const LAYOUT_ROUTES: Routes = [
     {
@@ -11,6 +12,7 @@ const LAYOUT_ROUTES: Routes = [
             {path: 'usuarios', component: UsersComponent},
             {path: 'guardias', component: GuardsComponent},
             {path: 'zonas', component: ZonesComponent},
+            {path: 'servicios', component: ClientsZoneComponent},
         ]
     }
 ];

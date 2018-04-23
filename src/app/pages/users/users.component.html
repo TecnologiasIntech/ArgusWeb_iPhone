@@ -44,9 +44,9 @@
             <table class="table">
 
                 <tbody>
-                <tr *ngFor="let guard of usersSearched; let index = index" (click)="showUser(index, activeTab.userType)">
+                <tr *ngFor="let user of usersSearched; let index = index" (click)="showUser(user.usuarioKey, activeTab.userType)">
                     <td class="guards">
-                        {{ guard.usuarioNombre }}
+                        {{ user.usuarioNombre }}
                     </td>
                 </tr>
 
