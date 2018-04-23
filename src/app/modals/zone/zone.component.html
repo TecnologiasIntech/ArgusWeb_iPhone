@@ -1,0 +1,25 @@
+<section class="m-t-15 p-15 ">
+
+    <h4 class="text-center">Clientes de zona: {{ zone.zonaNombre }}</h4>
+
+    <div style="height: 60vh; overflow-y: auto;" *ngIf="zone.zonaClientes != null">
+        <table class="table">
+            <tbody>
+            <tr *ngFor="let client of objectKeys(zone.zonaClientes)">
+                <td class="guards">
+                    {{ client }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="height: 60vh; padding-top: 25%;" *ngIf="zone.zonaClientes == null">
+
+        <not-found  title="No se encontraron" message="clientes registrados"></not-found>
+    </div>
+
+
+    <button class="btn btn-danger btn-block m-t-30 m-b-5" (click)="closeModal()">Cerrar</button>
+
+</section>
