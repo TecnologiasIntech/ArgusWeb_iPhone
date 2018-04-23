@@ -32,6 +32,10 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {GuardComponent} from '../modals/guard/guard.component';
 import {NotFoundComponent} from '../components/not-found/not-found.component';
 import {LoaderComponent} from '../components/loader/loader.component';
+import {UsersComponent} from '../pages/users/users.component';
+import {UserService} from '../services/user.service';
+import {UserComponent} from '../modals/user/user.component';
+import {CapitalizePipe} from '../pipes/capitalize.pipe';
 
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -50,14 +54,18 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         GuardsComponent,
         GuardComponent,
         NotFoundComponent,
-        LoaderComponent
+        LoaderComponent,
+        UsersComponent,
+        UserComponent,
+        CapitalizePipe
     ],
     providers: [
         Globals,
         Broadcaster,
         AlertService,
         ValidationService,
-        GuardService
+        GuardService,
+        UserService
     ],
     imports: [
         CommonModule,
@@ -76,9 +84,11 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         AngularFireDatabaseModule,
         AngularFireAuthModule,
         CountdownTimerModule,
+
     ],
     entryComponents: [
-        GuardComponent
+        GuardComponent,
+        UserComponent
     ]
 })
 

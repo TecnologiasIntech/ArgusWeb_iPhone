@@ -1,0 +1,67 @@
+<section class="content">
+    <div class="card m-b-10">
+        <div class="card-body p-10">
+            <div class="input-group">
+                <span class="input-group-addon m-t-5">
+                    <i class="zmdi zmdi-search"></i>
+                </span>
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control form-control-line"
+                           placeholder="Buscar usuario..."
+                           #search
+                           (keyup)="userSearch(search.value, activeTab.userType)">
+                    <i class="form-group__bar" style="bottom: 2px"></i>
+                </div>
+                <span class="input-group-addon p-t-5" >
+                    <i class="zmdi zmdi-close zmdi-hc-2x {{ search.value.length > 0 ? 'text-danger' : 'text-white' }}" (click)="search.value = ''; userSearch('', activeTab.userType)"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="height: 73vh; overflow-y: auto">
+
+        <!--Loader-->
+        <loader *ngIf="isLoading"></loader>
+
+        <div class="card-header p-t-0 p-b-0">
+            <!--Navigation-->
+            <div class="row">
+                <div class="col-12">
+                    <ul class="tab-nav tn-justified">
+                        <li class="{{ activeTab.title == tab.title ? 'active':'' }}" *ngFor="let tab of tabs">
+                            <a (click)="changeTab(tab)">{{ tab.title }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--Users-->
+        <div class="card-body p-10 animated {{ existUsers ? 'fadeIn': '' }}" *ngIf="userFoundSearch && existUsers">
+
+            <table class="table">
+
+                <tbody>
+                <tr *ngFor="let guard of usersSearched; let index = index" (click)="showUser(index, activeTab.userType)">
+                    <td class="guards">
+                        {{ guard.usuarioNombre }}
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <!--User not found in the Search-->
+        <not-found [title]="activeTab.messageError | capitalize" message="no encontrados" style="margin-top: 25%;"
+                   *ngIf="!userFoundSearch"></not-found>
+
+        <!--Users not found in the DB-->
+        <not-found title="No hay" [message]="activeTab.messageError + ' registrados'" style="margin-top: 25%;"
+                   *ngIf="!existUsers && !isLoading"></not-found>
+
+    </div>
+</section>

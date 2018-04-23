@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Guard} from '../../interface/guard';
+import {Guard} from '../../interfaces/guard';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 
 @Component({

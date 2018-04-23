@@ -15,6 +15,9 @@ import { GuardsComponent } from './pages/guards/guards.component';
 import { GuardComponent } from './modals/guard/guard.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { UsersComponent } from './pages/users/users.component';
+import { UserComponent } from './modals/user/user.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 defineLocale('es', esLocale);
 
