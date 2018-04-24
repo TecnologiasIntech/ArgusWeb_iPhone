@@ -45,6 +45,7 @@ import {ClientsZoneComponent} from '../pages/clients-zone/clients-zone.component
 import {LogComponent} from '../modals/log/log.component';
 import {LogsComponent} from '../pages/logs/logs.component';
 import {LogService} from '../services/log.service';
+import {DateService} from '../services/date.service';
 
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -83,7 +84,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         UserService,
         ZoneService,
         ClientZoneService,
-        LogService
+        LogService,
+        DateService
     ],
     imports: [
         CommonModule,
