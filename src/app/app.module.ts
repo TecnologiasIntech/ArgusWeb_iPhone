@@ -40,9 +40,7 @@ defineLocale('es', esLocale);
 
     ],
     declarations: [
-        AppComponent,
-        AssistanceComponent,
-        SignComponent
+        AppComponent
     ],
     providers: [
         SharedService,
