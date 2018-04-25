@@ -24,6 +24,8 @@ import { ClientsZoneComponent } from './pages/clients-zone/clients-zone.componen
 import { ClientZoneComponent } from './modals/client-zone/client-zone.component';
 import { LogsComponent } from './pages/logs/logs.component';
 import { LogComponent } from './modals/log/log.component';
+import { AssistanceComponent } from './pages/assistance/assistance.component';
+import { SignComponent } from './modals/sign/sign.component';
 
 defineLocale('es', esLocale);
 

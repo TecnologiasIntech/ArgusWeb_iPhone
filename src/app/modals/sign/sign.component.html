@@ -1,0 +1,30 @@
+<section class="m-t-15 p-15">
+
+    <h4 class="text-center">{{ guard }}</h4>
+
+    <div style="height: 60vh; overflow-y: auto;">
+
+        <!--Signs-->
+        <img [src]="firmaAsistio" *ngIf="firmaAsistio != null"
+             style="width: 100%; height: auto; border: 1px solid lightgray;">
+        <img [src]="firmaCubreDescanso" *ngIf="firmaCubreDescanso != null"
+             style="width: 100%; height: auto; border: 1px solid lightgray;">
+        <img [src]="firmaDobleTurno" *ngIf="firmaDobleTurno != null"
+             style="width: 100%; height: auto; border: 1px solid lightgray;">
+        <img [src]="firmaHorasExtras" *ngIf="firmaHorasExtras != null"
+             style="width: 100%; height: auto; border: 1px solid lightgray;">
+
+        <!--Captures-->
+        <img [src]="capturaAsistio" *ngIf="capturaAsistio != null"
+             style="width: 100%; height: auto; border: 1px solid lightgray;">
+        <img [src]="capturaCubreDescanso" *ngIf="capturaCubreDescanso != null"
+             style="width: 100%; height: auto; border: 1px solid lightgray;">
+        <img [src]="capturaDobleTurno" *ngIf="capturaDobleTurno != null"
+             style="width: 100%; height: auto; border: 1px solid lightgray;">
+        <img [src]="capturaHorasExtras" *ngIf="capturaHorasExtras != null"
+             style="width: 100%; height: auto; border: 1px solid lightgray;">
+
+    </div>
+
+    <button class="btn btn-danger btn-block m-t-30 m-b-5" (click)="closeModal()">Cerrar</button>
+</section>

@@ -5,6 +5,7 @@ import {UsersComponent} from '../pages/users/users.component';
 import {ZonesComponent} from '../pages/zones/zones.component';
 import {ClientsZoneComponent} from '../pages/clients-zone/clients-zone.component';
 import {LogsComponent} from '../pages/logs/logs.component';
+import {AssistanceComponent} from '../pages/assistance/assistance.component';
 
 const LAYOUT_ROUTES: Routes = [
     {
@@ -15,6 +16,7 @@ const LAYOUT_ROUTES: Routes = [
             {path: 'zonas', component: ZonesComponent},
             {path: 'servicios', component: ClientsZoneComponent},
             {path: 'bitacora', component: LogsComponent},
+            {path: 'asistencia', component: AssistanceComponent},
         ]
     }
 ];
