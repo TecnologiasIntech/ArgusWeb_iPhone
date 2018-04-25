@@ -13,8 +13,8 @@ export class LogService {
     getLogs(): Promise<Log[]> {
 
         return new Promise(resolve => {
-            // this.db.list('Argus/BitacoraRegistro/' + DateService.getCurrentDate()).valueChanges()
-            this.db.list('Argus/BitacoraRegistro/20171107').valueChanges()
+            this.db.list('Argus/BitacoraRegistro/' + DateService.getCurrentDate()).valueChanges()
+            // this.db.list('Argus/BitacoraRegistro/20171107').valueChanges()
                 .subscribe((logs: any[]) => {
                     logs = _.filter(logs, 'supervisor');
                     resolve(logs);

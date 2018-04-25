@@ -12,10 +12,10 @@ export class AssistanceService {
 
     getAssistancesList(): Promise<Assistance[]> {
         return new Promise(resolve => {
-            // this.db.list('Argus/Bitacora/' + DateService.getCurrentDate()).valueChanges()
-            this.db.list('Argus/Bitacora/20180304').valueChanges()
+            this.db.list('Argus/Bitacora/' + DateService.getCurrentDate()).valueChanges()
+            // this.db.list('Argus/Bitacora/20180304').valueChanges()
                 .subscribe((response: Assistance[]) => {
-                    response = _.filter(response, 'guardiaNombre')
+                    response = _.filter(response, 'guardiaNombre');
                     resolve(response);
                 });
         });
