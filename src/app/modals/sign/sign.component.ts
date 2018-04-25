@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {BsModalRef} from 'ngx-bootstrap';
+import {Guard} from '../../interfaces/guard';
 
 @Component({
-  selector: 'app-sign',
-  templateUrl: './sign.component.html',
-  styleUrls: ['./sign.component.scss']
+    selector: 'app-sign',
+    templateUrl: './sign.component.html',
+    styleUrls: ['./sign.component.scss']
 })
 export class SignComponent implements OnInit {
 
-  constructor() { }
+    @Input() firmaAsistio: string = null;
+    @Input() firmaCubreDescanso: string = null;
+    @Input() firmaDobleTurno: string = null;
+    @Input() firmaHorasExtras: string = null;
+    @Input() capturaAsistio: string = null;
+    @Input() capturaCubreDescanso: string = null;
+    @Input() capturaDobleTurno: string = null;
+    @Input() capturaHorasExtras: string = null;
+    @Input() guard: string = null;
 
-  ngOnInit() {
-  }
+    constructor(private _activeModal: BsModalRef) {
+    }
+
+    ngOnInit() {
+
+    }
+
+    closeModal() {
+        this._activeModal.hide();
+    }
 
 }

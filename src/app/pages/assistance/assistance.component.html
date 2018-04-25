@@ -1,3 +1,54 @@
-<p>
-  assistance works!
-</p>
+<section class="content">
+    <div class="card m-b-10">
+        <div class="card-body p-10">
+            <div class="input-group">
+                <span class="input-group-addon m-t-5">
+                    <i class="zmdi zmdi-search"></i>
+                </span>
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control form-control-line"
+                           placeholder="Buscar guardia..."
+                           #search
+                           (keyup)="guardSearch(search.value)">
+                    <i class="form-group__bar" style="bottom: 2px"></i>
+                </div>
+                <span class="input-group-addon p-t-5" >
+                    <i class="zmdi zmdi-close zmdi-hc-2x {{ search.value.length > 0 ? 'text-danger' : 'text-white' }}" (click)="search.value = ''; guardSearch('')"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="height: 73vh; overflow-y: auto">
+
+        <!--Loader-->
+        <loader *ngIf="isLoading"></loader>
+
+        <!--Guards-->
+        <div class="card-body p-10 animated {{ existAssistance ? 'fadeIn': '' }}" *ngIf="assistanceFoundSearch && existAssistance">
+
+            <table class="table">
+
+                <tbody>
+                <tr *ngFor="let assistance of assistanceSearched; let index = index" (click)="showGuard(assistance)">
+                    <td class="guards">
+                        {{ assistance.guardiaNombre }}
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <!--Guard not found in the Search-->
+        <not-found title="Guardia no encontrado" message="en la lista de hoy" style="margin-top: 25%;"
+                   *ngIf="!assistanceFoundSearch"></not-found>
+
+        <!--Guards not found in the DB-->
+        <not-found title="No hay asistencia" message="de guardias " style="margin-top: 25%;"
+                   *ngIf="!existAssistance && !isLoading"></not-found>
+
+    </div>
+</section>
