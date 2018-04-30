@@ -11,12 +11,12 @@ const LAYOUT_ROUTES: Routes = [
     {
         path: '', component: LayoutComponent, children: [
             {path: '', redirectTo: 'usuarios', pathMatch: 'full'},
-            {path: 'usuarios', component: UsersComponent},
-            {path: 'guardias', component: GuardsComponent},
-            {path: 'zonas', component: ZonesComponent},
-            {path: 'servicios', component: ClientsZoneComponent},
-            {path: 'bitacora', component: LogsComponent},
-            {path: 'asistencia', component: AssistanceComponent},
+            {path: 'usuarios', component: UsersComponent, data: { title: 'Usuarios' } },
+            {path: 'guardias', component: GuardsComponent, data: { title: 'Guardias' } },
+            {path: 'zonas', component: ZonesComponent, data: { title: 'Zonas' } },
+            {path: 'servicios', component: ClientsZoneComponent, data: { title: 'Servicios' } },
+            {path: 'bitacora', component: LogsComponent, data: { title: 'Bitacoras' } },
+            {path: 'asistencia', component: AssistanceComponent, data: { title: 'Lista de asistencia' } },
         ]
     }
 ];
