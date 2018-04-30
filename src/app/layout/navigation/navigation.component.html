@@ -4,10 +4,10 @@
         <div class="user" dropdown>
             <div class="user__info" dropdownToggle>
                 <!--<div class="user__info">-->
-                <img class="user__img" src="./assets/demo/img/profile-pics/2.jpg" alt="">
+                <img class="user__img" src="../../../assets/images/user.png" alt="">
                 <div>
-                    <div class="user__name">Carlos Alatorre</div>
-                    <div class="user__email">carlos@gmail.com</div>
+                    <!--<div class="user__name">Carlos Alatorre</div>-->
+                    <div class="user__email">{{ email }}</div>
                 </div>
             </div>
 
@@ -17,7 +17,7 @@
         </div>
 
         <ul class="navigation">
-            <li routerLinkActive="navigation__active"><a [routerLink]="['/home']"><i class="zmdi zmdi-accounts-list"></i> Usuarios</a></li>
+            <li routerLinkActive="navigation__active"><a [routerLink]="['/usuarios']"><i class="zmdi zmdi-accounts-list"></i> Usuarios</a></li>
             <li routerLinkActive="navigation__active"><a [routerLink]="['/guardias']"><i class="zmdi zmdi-shield-check"></i> Guardias</a></li>
             <li routerLinkActive="navigation__active"><a [routerLink]="['/zonas']"><i class="zmdi zmdi-pin"></i> Zonas</a></li>
             <li routerLinkActive="navigation__active"><a [routerLink]="['/servicios']"><i class="zmdi zmdi-store"></i> Servicios</a></li>

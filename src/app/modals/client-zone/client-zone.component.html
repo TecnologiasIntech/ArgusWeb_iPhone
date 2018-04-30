@@ -1,0 +1,23 @@
+<section class="m-t-15 p-15 ">
+
+    <h4 class="text-center">Guardias de: {{ client.clienteNombre }}</h4>
+
+    <div style="height: 60vh; overflow-y: auto;" *ngIf="client.clienteGuardias != null">
+        <table class="table">
+            <tbody>
+            <tr *ngFor="let guard of objectKeys(client.clienteGuardias)">
+                <td class="guards">
+                    {{ client.clienteGuardias[guard].usuarioNombre }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="height: 60vh; padding-top: 25%;" *ngIf="client.clienteGuardias == null">
+        <not-found  title="No se encontraron" message="guardias registrados"></not-found>
+    </div>
+    
+    <button class="btn btn-danger btn-block m-t-30 m-b-5" (click)="closeModal()">Cerrar</button>
+
+</section>
