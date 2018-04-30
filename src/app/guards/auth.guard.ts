@@ -13,7 +13,11 @@ export class AuthGuard implements CanActivate {
                 state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
         return new Promise(resolve => {
 
-            this.af.auth.onAuthStateChanged(user => resolve(user != null));
+            this.af.auth.onAuthStateChanged(user => {
+                if (user == null) window.location.href = '#/login';
+
+                resolve(user != null);
+            });
 
         });
     }
