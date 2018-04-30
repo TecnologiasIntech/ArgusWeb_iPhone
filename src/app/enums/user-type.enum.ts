@@ -1,0 +1,6 @@
+export enum UserType {
+    SUPERVISOR,
+    COORDINATOR,
+    ADMINISTRATOR,
+    HUMANRESOURCES
+}

@@ -1,5 +1,6 @@
-import { Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
-import { SharedService } from "../../shared/services/shared.service";
+import {Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
+import {SharedService} from '../../shared/services/shared.service';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 @Component({
     selector: 'app-navigation',
@@ -25,7 +26,7 @@ export class NavigationComponent implements OnInit {
     sidebarVisible: boolean;
 
     // Sub menu visibilities
-    navigationSubState:any = {
+    navigationSubState: any = {
         Tables: 'inactive',
         Forms: 'inactive',
         SamplePages: 'inactive',
@@ -34,15 +35,22 @@ export class NavigationComponent implements OnInit {
         Charts: 'inactive',
     };
 
+    email:string = '';
+
     // Toggle sub menu
     toggleNavigationSub(menu, event) {
         event.preventDefault();
         this.navigationSubState[menu] = (this.navigationSubState[menu] === 'inactive' ? 'active' : 'inactive');
     }
 
-    constructor(private sharedService: SharedService) {
+    constructor(private sharedService: SharedService,
+                private af: AngularFireAuth) {
         sharedService.sidebarVisibilitySubject.subscribe((value) => {
-            this.sidebarVisible = value
+            this.sidebarVisible = value;
+        });
+
+        this.af.auth.onAuthStateChanged(user=>{
+            this.email = user.email;
         })
     }
 

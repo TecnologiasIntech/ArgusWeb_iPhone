@@ -27,7 +27,30 @@ import {CountdownTimerModule} from 'ngx-countdown-timer';
 import {LimitToPipe} from '../pipes/limit-to.pipe';
 import {GrowlComponent} from '../components/growl/growl.component';
 import {GuardsComponent} from '../pages/guards/guards.component';
-
+import {GuardService} from '../services/guard.service';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {GuardComponent} from '../modals/guard/guard.component';
+import {NotFoundComponent} from '../components/not-found/not-found.component';
+import {LoaderComponent} from '../components/loader/loader.component';
+import {UsersComponent} from '../pages/users/users.component';
+import {UserService} from '../services/user.service';
+import {UserComponent} from '../modals/user/user.component';
+import {CapitalizePipe} from '../pipes/capitalize.pipe';
+import {ZonesComponent} from '../pages/zones/zones.component';
+import {ZoneComponent} from '../modals/zone/zone.component';
+import {ZoneService} from '../services/zone.service';
+import {ClientZoneComponent} from '../modals/client-zone/client-zone.component';
+import {ClientZoneService} from '../services/client-zone.service';
+import {ClientsZoneComponent} from '../pages/clients-zone/clients-zone.component';
+import {LogComponent} from '../modals/log/log.component';
+import {LogsComponent} from '../pages/logs/logs.component';
+import {LogService} from '../services/log.service';
+import {DateService} from '../services/date.service';
+import {AssistanceComponent} from '../pages/assistance/assistance.component';
+import {SignComponent} from '../modals/sign/sign.component';
+import {AssistanceService} from '../services/assistance.service';
+import {NotificationService} from '../services/notification.service';
+import {DataRouteService} from '../services/data-route.service';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true
@@ -42,13 +65,36 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         NavigationTriggerComponent,
         LimitToPipe,
         GrowlComponent,
-        GuardsComponent
+        GuardsComponent,
+        GuardComponent,
+        NotFoundComponent,
+        LoaderComponent,
+        UsersComponent,
+        UserComponent,
+        CapitalizePipe,
+        ZonesComponent,
+        ZoneComponent,
+        ClientsZoneComponent,
+        ClientZoneComponent,
+        LogsComponent,
+        LogComponent,
+        AssistanceComponent,
+        SignComponent
     ],
     providers: [
         Globals,
         Broadcaster,
         AlertService,
-        ValidationService
+        ValidationService,
+        GuardService,
+        UserService,
+        ZoneService,
+        ClientZoneService,
+        LogService,
+        DateService,
+        AssistanceService,
+        NotificationService,
+        DataRouteService
     ],
     imports: [
         CommonModule,
@@ -65,9 +111,17 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         Select2Module,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireDatabaseModule,
+        AngularFireAuthModule,
         CountdownTimerModule,
+
     ],
     entryComponents: [
+        GuardComponent,
+        UserComponent,
+        ZoneComponent,
+        ClientZoneComponent,
+        LogComponent,
+        SignComponent
     ]
 })
 

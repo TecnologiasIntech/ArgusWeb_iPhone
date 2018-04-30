@@ -12,6 +12,20 @@ import { esLocale } from 'ngx-bootstrap/locale';
 import {CountdownTimerModule} from 'ngx-countdown-timer';
 import { ToastrModule } from 'ngx-toastr';
 import { GuardsComponent } from './pages/guards/guards.component';
+import { GuardComponent } from './modals/guard/guard.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { UsersComponent } from './pages/users/users.component';
+import { UserComponent } from './modals/user/user.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { ZonesComponent } from './pages/zones/zones.component';
+import { ZoneComponent } from './modals/zone/zone.component';
+import { ClientsZoneComponent } from './pages/clients-zone/clients-zone.component';
+import { ClientZoneComponent } from './modals/client-zone/client-zone.component';
+import { LogsComponent } from './pages/logs/logs.component';
+import { LogComponent } from './modals/log/log.component';
+import { AssistanceComponent } from './pages/assistance/assistance.component';
+import { SignComponent } from './modals/sign/sign.component';
 
 defineLocale('es', esLocale);
 

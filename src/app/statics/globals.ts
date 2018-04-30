@@ -11,8 +11,7 @@ export class Globals {
         animated: true,
         keyboard: false,
         backdrop: true,
-        ignoreBackdropClick: true,
-
+        ignoreBackdropClick: false,
     };
 
 }
