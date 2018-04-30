@@ -49,7 +49,7 @@ import {DateService} from '../services/date.service';
 import {AssistanceComponent} from '../pages/assistance/assistance.component';
 import {SignComponent} from '../modals/sign/sign.component';
 import {AssistanceService} from '../services/assistance.service';
-
+import {NotificationService} from '../services/notification.service';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true
@@ -91,7 +91,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         ClientZoneService,
         LogService,
         DateService,
-        AssistanceService
+        AssistanceService,
+        NotificationService
     ],
     imports: [
         CommonModule,
