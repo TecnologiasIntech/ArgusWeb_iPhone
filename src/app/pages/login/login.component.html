@@ -1,4 +1,4 @@
-<div class="card m-10 " style="height: 50vh; margin-top: 15% !important;">
+<div class="card m-10 " style="height: 300px; margin-top: 15% !important;">
     <div class="card-header p-b-0 text-center">
         <h2>Inicio de sesión</h2>
     </div>
@@ -11,7 +11,7 @@
         </div>
 
         <div class="form-group form-group--float">
-            <input type="password" class="form-control form-control-line" formControlFloat #password>
+            <input type="password" class="form-control form-control-line" formControlFloat #password (keyup.enter)="signIn(email.value, password.value)">
             <label>Contraseña</label>
             <i class="form-group__bar"></i>
         </div>
