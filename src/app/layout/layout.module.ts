@@ -50,6 +50,7 @@ import {AssistanceComponent} from '../pages/assistance/assistance.component';
 import {SignComponent} from '../modals/sign/sign.component';
 import {AssistanceService} from '../services/assistance.service';
 import {NotificationService} from '../services/notification.service';
+import {DataRouteService} from '../services/data-route.service';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true
@@ -92,7 +93,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         LogService,
         DateService,
         AssistanceService,
-        NotificationService
+        NotificationService,
+        DataRouteService
     ],
     imports: [
         CommonModule,
