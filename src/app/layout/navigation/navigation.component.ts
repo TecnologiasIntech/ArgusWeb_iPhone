@@ -35,7 +35,7 @@ export class NavigationComponent implements OnInit {
         Charts: 'inactive',
     };
 
-    email:string = '';
+    email: string = '';
 
     // Toggle sub menu
     toggleNavigationSub(menu, event) {
@@ -49,11 +49,18 @@ export class NavigationComponent implements OnInit {
             this.sidebarVisible = value;
         });
 
-        this.af.auth.onAuthStateChanged(user=>{
+        this.af.auth.onAuthStateChanged(user => {
             this.email = user.email;
-        })
+        });
     }
 
     ngOnInit() {
+    }
+
+    signOut() {
+        this.af.auth.signOut()
+            .then(()=>{
+                window.location.href = '#/login';
+            })
     }
 }

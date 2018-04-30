@@ -26,6 +26,12 @@ import { LogsComponent } from './pages/logs/logs.component';
 import { LogComponent } from './modals/log/log.component';
 import { AssistanceComponent } from './pages/assistance/assistance.component';
 import { SignComponent } from './modals/sign/sign.component';
+import { LoginComponent } from './pages/login/login.component';
+import {SharedModule} from './shared/shared.module';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from 'angularfire2';
+import {AlertService} from './services/alert.service';
 
 defineLocale('es', esLocale);
 
@@ -37,17 +43,21 @@ defineLocale('es', esLocale);
         routing,
         CountdownTimerModule.forRoot(),
         ToastrModule.forRoot(),
-
+        SharedModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireAuthModule,
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        LoginComponent
     ],
     providers: [
         SharedService,
         {
             provide: LocationStrategy,
             useClass: HashLocationStrategy
-        }
+        },
+        AlertService
     ],
     bootstrap: [AppComponent]
 })

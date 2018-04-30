@@ -51,6 +51,7 @@ import {SignComponent} from '../modals/sign/sign.component';
 import {AssistanceService} from '../services/assistance.service';
 import {NotificationService} from '../services/notification.service';
 import {DataRouteService} from '../services/data-route.service';
+import {AuthGuard} from '../guards/auth.guard';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true
@@ -94,7 +95,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         DateService,
         AssistanceService,
         NotificationService,
-        DataRouteService
+        DataRouteService,
+        AuthGuard
     ],
     imports: [
         CommonModule,
